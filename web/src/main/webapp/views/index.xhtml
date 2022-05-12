@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+
+    Copyright (c) 2022 ndangawa.it. All rights reserved.
+ 
+    You may not modify, use, reproduce, or distribute this software except in
+    compliance with  the terms of the License at:
+    https://www.ndangawa.it/opensources/transpay/LICENSE.txt
+
+-->
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet name="css/styles.css" target="head"/>
+        <div id="head">
+            <div>
+                <h2>Transpay</h2>
+            </div>
+            <div id="nav">
+                <h:form>
+                    <div>
+                        <div>
+                            <h:commandLink action="#{homeBean.openSubscribePage}">
+                                <h:outputText value="#{bundle.Subscribers}"/>
+                            </h:commandLink>
+                        </div>
+                        <div>
+                            <h:commandLink action="#{homeBean.openTitlePage}">
+                                <h:outputText value="#{bundle.Title}"/>
+                            </h:commandLink>
+                        </div>
+                        <div>
+                            <h:commandLink action="#{homeBean.openTrafficPage}">
+                                <h:outputText value="#{bundle.Traffic}"/>
+                            </h:commandLink>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+        <div id="body">
+
+        </div>
+        
+    </h:body>
+</html>
