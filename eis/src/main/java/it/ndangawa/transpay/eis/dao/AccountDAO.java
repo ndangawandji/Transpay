@@ -5,6 +5,8 @@
  * compliance with  the terms of the License at:
  * https://www.ndangawa.it/opensources/transpay/LICENSE.txt
  */
+
+ 
 package it.ndangawa.transpay.eis.dao;
 
 import java.io.FileInputStream;
@@ -84,8 +86,7 @@ public class AccountDAO extends AbstractGenericDAO<Account, BigInteger> {
 				birthdate.setTimeInMillis(rs.getDate("birthdate").getTime());
 				Account account = new Account(rs.getInt("account_id"),
 									rs.getString("electronic_mail"),
-									rs.getString("account_password"),
-									rs.getString("user_role"));
+									rs.getString("account_password"));
 				
 				Customer customer = account.initializeInfos(rs.getString("firstname"),
 											rs.getString("lastname"),

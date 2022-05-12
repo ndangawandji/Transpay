@@ -12,6 +12,7 @@ package it.ndangawa.transpay.eis.model;
 import java.io.FileInputStream;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 
 /**
@@ -30,10 +31,12 @@ public class Account implements Serializable {
 	private String electronicMail;
 	
 	private String password;
-
-	private String role;
 	
 	private Customer customer;
+
+	private List<Adress> adresses;
+
+	private List<CreditCard> creditCards;
 
 	/**
 	 * 
@@ -48,29 +51,17 @@ public class Account implements Serializable {
 	 * @param password
 	 * @param role
 	 */
-	public Account(int accountID, String electronicMail, String password, String role) {
+	public Account(int accountID, String electronicMail, String password) {
 		super();
 		this.accountID = accountID;
 		this.electronicMail = electronicMail;
 		this.password = password;
-		this.role = role;
 	}
 
 	/**
 	 * @param electronicMail
 	 * @param password
 	 * @param role
-	 */
-	public Account(String electronicMail, String password, String role) {
-		super();
-		this.electronicMail = electronicMail;
-		this.password = password;
-		this.role = role;
-	}
-
-	/**
-	 * @param electronicMail
-	 * @param password
 	 */
 	public Account(String electronicMail, String password) {
 		super();
@@ -85,12 +76,11 @@ public class Account implements Serializable {
 	 * @param role
 	 * @param customer
 	 */
-	public Account(int accountID, String electronicMail, String password, String role, Customer customer) {
+	public Account(int accountID, String electronicMail, String password, Customer customer) {
 		super();
 		this.accountID = accountID;
 		this.electronicMail = electronicMail;
 		this.password = password;
-		this.role = role;
 		this.customer = customer;
 	}
 
@@ -141,20 +131,6 @@ public class Account implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	/**
-	 * @return the role
-	 */
-	public String getRole() {
-		return role;
-	}
-
-	/**
-	 * @param role the password to set
-	 */
-	public void setRole(String role) {
-		this.role = role;
-	}
 	
 	/**
 	 * @return the customer
@@ -168,6 +144,34 @@ public class Account implements Serializable {
 	 */
 	public void setAccountInfos(Customer customer) {
 		this.customer = customer;
+	}
+
+	/**
+	 * @return the adresses
+	 */
+	public List<Adress> getAdresses() {
+		return this.adresses;
+	}
+
+	/**
+	 * @param adresses the adresses to set
+	 */
+	public void setAdresses(List<Adress> adresses) {
+		this.adresses = adresses;
+	}
+
+	/**
+	 * @return the credit cards
+	 */
+	public List<CreditCard> getCreditCards() {
+		return this.creditCards;
+	}
+
+	/**
+	 * @param creditCards the credit cards to set
+	 */
+	public void setCreditCards(List<CreditCard> creditCards) {
+		this.creditCards = creditCards;
 	}
 
 

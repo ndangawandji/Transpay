@@ -5,11 +5,12 @@
  * compliance with  the terms of the License at:
  * https://www.ndangawa.it/opensources/transpay/LICENSE.txt
  */
+
+ 
 package it.ndangawa.transpay.eis.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
-import java.sql.Date;
+import java.util.Calendar;
 
 /**
  * @author Ndanga Wandji
@@ -22,15 +23,17 @@ public class CreditCard implements Serializable {
 	 */
 	private static final long serialVersionUID = -7624015660724755153L;
 	
-	private BigInteger CreditCardID;
+	private int CreditCardID;
 	
-	private String creditCardNumber;
+	private String number;
 	
-	private String creditCardCrypto;
+	private int crypto;
 	
-	private Date validityDate;
+	private Calendar validityDate;
 	
 	private String owner;
+
+	private Account account;
 
 	/**
 	 * 
@@ -40,58 +43,68 @@ public class CreditCard implements Serializable {
 	}
 
 	/**
+	 * 
+	 */
+	public CreditCard(String CreditCardNumber, int creditCardCrypto, Calendar date) {
+		// TODO Auto-generated constructor stub
+		this.number = CreditCardNumber;
+		this.crypto = creditCardCrypto;
+		this.validityDate = date;
+	}
+
+	/**
 	 * @return the creditCardID
 	 */
-	public BigInteger getCreditCardID() {
+	public int getCreditCardID() {
 		return CreditCardID;
 	}
 
 	/**
 	 * @param creditCardID the creditCardID to set
 	 */
-	public void setCreditCardID(BigInteger creditCardID) {
+	public void setCreditCardID(int creditCardID) {
 		CreditCardID = creditCardID;
 	}
 
 	/**
-	 * @return the creditCardNumber
+	 * @return the credit card number
 	 */
-	public String getCreditCardNumber() {
-		return creditCardNumber;
+	public String getNumber() {
+		return this.number;
 	}
 
 	/**
-	 * @param creditCardNumber the creditCardNumber to set
+	 * @param number the credit card number to set
 	 */
-	public void setCreditCardNumber(String creditCardNumber) {
-		this.creditCardNumber = creditCardNumber;
+	public void number(String creditCardNumber) {
+		this.number = creditCardNumber;
 	}
 
 	/**
-	 * @return the creditCardCrypto
+	 * @return the credit card crypto
 	 */
-	public String getCreditCardCrypto() {
-		return creditCardCrypto;
+	public int getCrypto() {
+		return this.crypto;
 	}
 
 	/**
-	 * @param creditCardCrypto the creditCardCrypto to set
+	 * @param crypto the credit card crypto to set
 	 */
-	public void setCreditCardCrypto(String creditCardCrypto) {
-		this.creditCardCrypto = creditCardCrypto;
+	public void setCrypto(int creditCardCrypto) {
+		this.crypto = creditCardCrypto;
 	}
 
 	/**
-	 * @return the validityDate
+	 * @return the validity date
 	 */
-	public Date getValidityDate() {
+	public Calendar getValidityDate() {
 		return validityDate;
 	}
 
 	/**
-	 * @param validityDate the validityDate to set
+	 * @param validityDate the validity date to set
 	 */
-	public void setValidityDate(Date validityDate) {
+	public void setValidityDate(Calendar validityDate) {
 		this.validityDate = validityDate;
 	}
 
@@ -107,6 +120,20 @@ public class CreditCard implements Serializable {
 	 */
 	public void setOwner(String owner) {
 		this.owner = owner;
+	}
+
+	/**
+	 * @return the account
+	 */
+	public Account getAccount() {
+		return this.account;
+	}
+
+	/**
+	 * @param account the account to set
+	 */
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 }

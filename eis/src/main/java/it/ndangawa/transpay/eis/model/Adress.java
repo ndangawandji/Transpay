@@ -5,13 +5,14 @@
  * compliance with  the terms of the License at:
  * https://www.ndangawa.it/opensources/transpay/LICENSE.txt
  */
+
+
 package it.ndangawa.transpay.eis.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 /**
- * @author ndang
+ * @author Ndanga Wandji
  *
  */
 public class Adress implements Serializable {
@@ -21,7 +22,7 @@ public class Adress implements Serializable {
 	 */
 	private static final long serialVersionUID = -9201235090477680175L;
 	
-	private BigInteger AdressID;
+	private int AdressID;
 	
 	private String adressName;
 	
@@ -34,6 +35,8 @@ public class Adress implements Serializable {
 	private String country;
 	
 	private String homePhone;
+
+	private Account account;
 	
 
 	/**
@@ -47,7 +50,7 @@ public class Adress implements Serializable {
 	/**
 	 * @return the adressID
 	 */
-	public BigInteger getAdressID() {
+	public int getAdressID() {
 		return AdressID;
 	}
 
@@ -55,7 +58,7 @@ public class Adress implements Serializable {
 	/**
 	 * @param adressID the adressID to set
 	 */
-	public void setAdressID(BigInteger adressID) {
+	public void setAdressID(int adressID) {
 		AdressID = adressID;
 	}
 
@@ -153,6 +156,21 @@ public class Adress implements Serializable {
 	 */
 	public void setHomePhone(String homePhone) {
 		this.homePhone = homePhone;
+	}
+
+	/**
+	 * @return the account
+	 */
+	public Account getAccount() {
+		return this.account;
+	}
+
+
+	/**
+	 * @param account the account to set
+	 */
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 }
