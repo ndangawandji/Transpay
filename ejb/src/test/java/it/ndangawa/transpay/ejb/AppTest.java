@@ -1,4 +1,4 @@
-package com.digits.transtem.transpay.ejb;
+package it.ndangawa.transpay.ejb;
 
 import static org.junit.Assert.assertTrue;
 
